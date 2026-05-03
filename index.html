@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Real-time weather app">
+    <title>Weather App</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <main class="app">
+
+        <!-- Search Section -->
+        <header class="search-section">
+            <input 
+                type="text" 
+                id="cityInput" 
+                placeholder="Search city..." 
+                aria-label="Enter city name"
+            >
+            <button id="searchBtn" aria-label="Search weather">
+                Search
+            </button>
+        </header>
+
+        <!-- Weather Info Section -->
+        <section class="weather-section hidden" id="weatherData" aria-live="polite">
+
+            <!-- Location Info -->
+            <div class="location-info">
+                <p class="country" id="country"></p>
+                <h1 class="city-name" id="cityName"></h1>
+                <time class="date" id="date"></time>
+            </div>
+
+            <!-- Temperature -->
+            <div class="temp-section">
+                <div class="temp-display">
+                    <span class="temp-number" id="temp"></span>
+                    <span class="temp-unit">°C</span>
+                </div>
+                <figure class="weather-icon" id="icon" aria-label="Weather icon"></figure>
+            </div>
+
+            <!-- Condition -->
+            <div class="condition-section">
+                <p class="condition" id="condition"></p>
+                <p class="feels-like" id="feelsLike"></p>
+            </div>
+
+            <hr class="divider">
+
+            <!-- Stats -->
+            <div class="stats-grid">
+                <article class="stat-card">
+                    <p class="stat-label">Humidity</p>
+                    <strong class="stat-value" id="humidity"></strong>
+                    <p class="stat-unit">Relative humidity</p>
+                </article>
+
+                <article class="stat-card">
+                    <p class="stat-label">Wind</p>
+                    <strong class="stat-value" id="wind"></strong>
+                    <p class="stat-unit">km/h</p>
+                </article>
+
+                <article class="stat-card">
+                    <p class="stat-label">Pressure</p>
+                    <strong class="stat-value" id="pressure"></strong>
+                    <p class="stat-unit">hPa</p>
+                </article>
+            </div>
+
+        </section>
+
+        <!-- Last Searched -->
+        <footer class="last-searched">
+            <p>Last searched: <span id="lastCity"></span></p>
+        </footer>
+
+    </main>
+
+    <script src="app.js"></script>
+</body>
+</html>
